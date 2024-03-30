@@ -1,7 +1,7 @@
 # Wild_Rydes_App
 Deployed a simple web application that enables users to request unicorn rides from the Wild Rydes fleet.
-<img width="561" alt="Screenshot 2024-03-30 at 1 05 36 PM" src="https://github.com/prady13/Wild_Rydes_App/assets/62207613/ec5e3815-f31e-438a-bc95-5761a8a94973">
-<img width="1077" alt="Screenshot 2024-03-30 at 5 25 17 PM" src="https://github.com/prady13/Wild_Rydes_App/assets/62207613/9458cdf4-2bf8-4add-9e6a-d1c8243561bd">
+<img width="1396" alt="Screenshot 2024-03-30 at 6 11 42 PM" src="https://github.com/prady13/Wild_Rydes/assets/62207613/1e4d706b-6528-49aa-8af0-28c0828a9a5c">
+
 
 
 The application will present users with an HTML based user interface for indicating the location where they would like to be picked up and will interface on the backend with a RESTful web service to submit the request and dispatch a nearby unicorn. The application will also provide facilities for users to register with the service and log in before requesting rides.
@@ -11,48 +11,39 @@ JavaScript executed in the browser sends and receives data from a public backend
 Amazon Cognito provides user management and authentication functions to secure the backend API.
 DynamoDB provides a persistence layer where data can be stored by the API’s Lambda function.
 
-![image](https://github.com/prady13/Wild_Rydes_App/assets/62207613/b79d3ee0-a74c-432a-8249-64e3d9217444)
+
+Steps
+<img width="491" alt="Screenshot 2024-03-30 at 6 05 16 PM" src="https://github.com/prady13/Wild_Rydes/assets/62207613/f4726a85-1012-4ff0-8fb4-684d25a19aab">
+
+Hosting on Amplify
+<img width="1341" alt="Screenshot 2024-03-30 at 6 06 51 PM" src="https://github.com/prady13/Wild_Rydes/assets/62207613/a3884ccc-fb8b-42dc-93c9-fd2a55c6acdf">
 
 
-Step 1- Create an IDE environment on Amazon Cloud9 with the required specs to run AWS CLI commands on the local computer.
-<img width="1440" alt="Screenshot 2024-03-22 at 7 55 42 PM" src="https://github.com/prady13/Wild_Rydes_App/assets/62207613/965c5447-715d-41ee-8746-0806d2be6435">
-
-
-Step 2- Now we'll configure AWS Amplify Console to host the static resources for the web application.
-<img width="1440" alt="Screenshot 2024-03-22 at 8 11 31 PM" src="https://github.com/prady13/Wild_Rydes_App/assets/62207613/32d8b5f8-3ac4-4e12-b041-0f20dd40f2f0">
-<img width="1440" alt="Screenshot 2024-03-22 at 8 13 13 PM" src="https://github.com/prady13/Wild_Rydes_App/assets/62207613/16768581-788e-467d-b6b5-05ec969bb827">
-
-<img width="1440" alt="Screenshot 2024-03-30 at 2 26 13 PM" src="https://github.com/prady13/Wild_Rydes_App/assets/62207613/e998d2db-bdc5-4245-9ac3-6c0c9ba5cba2">
 Website Deployed Successfully 
+<img width="1416" alt="Screenshot 2024-03-30 at 6 07 39 PM" src="https://github.com/prady13/Wild_Rydes/assets/62207613/b6a59d5c-055e-420f-ad93-11c67f17615c">
 
-<img width="1440" alt="Screenshot 2024-03-30 at 2 26 33 PM" src="https://github.com/prady13/Wild_Rydes_App/assets/62207613/e83b1b5f-692f-4ec6-bee2-ca8e03302664">
 
 Creating User pool on Cognito for sign in/sign up for the users
-<img width="1440" alt="Screenshot 2024-03-30 at 2 33 46 PM" src="https://github.com/prady13/Wild_Rydes_App/assets/62207613/ea6c9984-5e61-4a14-8924-5d8d87af5c52">
-
-Commited changes in the repo by adding user pool and client ID then we'll be able to sign up through cognito
-<img width="1440" alt="Screenshot 2024-03-30 at 2 38 58 PM" src="https://github.com/prady13/Wild_Rydes_App/assets/62207613/1c7e4a96-05eb-4a00-b417-874ce83f0d5f">
-
-Successful
-<img width="1440" alt="Screenshot 2024-03-30 at 2 40 16 PM" src="https://github.com/prady13/Wild_Rydes_App/assets/62207613/59982543-f3f7-45d2-b741-e7e06664f058">
+<img width="1034" alt="Screenshot 2024-03-30 at 6 09 28 PM" src="https://github.com/prady13/Wild_Rydes/assets/62207613/2b0bdbf1-5a56-4935-9390-c3ad133647f3">
 
 After registering with the email and password Cognito will send us verification code via email (which we set up) and then we will be able to register successfully!
-<img width="941" alt="Screenshot 2024-03-30 at 2 43 52 PM" src="https://github.com/prady13/Wild_Rydes_App/assets/62207613/90a9f7cd-695e-4a43-8ac7-1c8e3b5b2de2">
+<img width="398" alt="Screenshot 2024-03-30 at 6 10 45 PM" src="https://github.com/prady13/Wild_Rydes/assets/62207613/9627be1f-632b-44f3-8ba4-6c752c44d2e5">
 
-<img width="453" alt="Screenshot 2024-03-30 at 2 44 21 PM" src="https://github.com/prady13/Wild_Rydes_App/assets/62207613/aca0ef83-2fc2-4e01-a2ba-01edcc6de916">
 
 Now we will build a REST API to invoke the ride sharing functionality, and we will use API Gateway for that function.
 Since we are using Cognito user pools we need to create an authorizer to authenticate calls. API Gateway uses JWTs that are returned by Cognito. (Hooking up the two parts by creating this authorizer)
-<img width="1083" alt="Screenshot 2024-03-30 at 5 31 00 PM" src="https://github.com/prady13/Wild_Rydes_App/assets/62207613/af8b0bb8-b5e5-4dd2-a412-712cc9aac0bf">
+<img width="1054" alt="Screenshot 2024-03-30 at 6 12 28 PM" src="https://github.com/prady13/Wild_Rydes/assets/62207613/e716a918-8c7e-4da7-941f-4b319d054bc8">
 
 API created
-<img width="1090" alt="Screenshot 2024-03-30 at 5 40 13 PM" src="https://github.com/prady13/Wild_Rydes_App/assets/62207613/abd8b494-caf6-43d4-bd3b-7e178b89ab84">
+<img width="1079" alt="Screenshot 2024-03-30 at 6 13 02 PM" src="https://github.com/prady13/Wild_Rydes/assets/62207613/3d786892-08e6-4582-87d1-dd103cba430d">
+
 
 Updated the invoke url in config.js file
-<img width="627" alt="Screenshot 2024-03-30 at 5 41 46 PM" src="https://github.com/prady13/Wild_Rydes_App/assets/62207613/c80db234-b799-4d0c-ba0b-4d3bba0261df">
+<img width="669" alt="Screenshot 2024-03-30 at 6 13 21 PM" src="https://github.com/prady13/Wild_Rydes/assets/62207613/d54abb71-e03c-4dbe-9807-415afdcd5ed8">
+
 
 The final working of the webapp as shown.
-<img width="1440" alt="Screenshot 2024-03-30 at 5 43 51 PM" src="https://github.com/prady13/Wild_Rydes_App/assets/62207613/2fae3eb2-2bdb-4f50-8969-fc67070fb713">
+<img width="1431" alt="Screenshot 2024-03-30 at 6 13 59 PM" src="https://github.com/prady13/Wild_Rydes/assets/62207613/94c4262a-280f-4254-bae8-bd29aa0bfa09">
 
 
 
